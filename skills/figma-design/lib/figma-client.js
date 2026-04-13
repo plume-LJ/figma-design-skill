@@ -1,9 +1,21 @@
 // Figma API 客户端封装
 class FigmaClient {
-  constructor(config) {
-    this.accessToken = config.FIGMA_ACCESS_TOKEN;
-    this.apiBase = config.FIGMA_API_BASE || 'https://api.figma.com/v1';
-    this.defaultFileId = config.FIGMA_FILE_ID;
+  constructor(config = {}) {
+    // 配置读取优先级: 1. config参数 → 2. 环境变量 → 3. 默认值
+    this.accessToken = config.FIGMA_ACCESS_TOKEN ||
+                      process.env.FIGMA_ACCESS_TOKEN;
+
+    this.apiBase = config.FIGMA_API_BASE ||
+                   process.env.FIGMA_API_BASE ||
+                   'https://api.figma.com/v1';
+
+    this.defaultFileId = config.FIGMA_FILE_ID ||
+                         process.env.FIGMA_FILE_ID;
+
+    // 验证必要配置
+    if (!this.accessToken) {
+      throw new Error('Figma访问令牌未配置。请设置FIGMA_ACCESS_TOKEN环境变量或在技能配置中提供。');
+    }
   }
 
   async request(endpoint, options = {}) {

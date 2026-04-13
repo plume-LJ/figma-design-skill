@@ -35,6 +35,26 @@ version: 1.0.0
 ### 获取文件 ID
 Figma 文件 URL 格式: `https://www.figma.com/file/{FILE_ID}/...`
 
+### 环境变量配置（推荐用于本地部署）
+
+在本地部署 Multica 时，可以使用 `.env` 文件配置敏感信息：
+
+```bash
+# .env 文件示例
+FIGMA_ACCESS_TOKEN=figd_xxxxxxxxxxxxxxxxxxxx
+FIGMA_FILE_ID=abc123def456
+FIGMA_API_BASE=https://api.figma.com/v1
+```
+
+**配置读取优先级**：
+1. **Skill config 参数**（Multica 技能配置界面设置）
+2. **环境变量**（`.env` 文件或系统环境变量）
+3. **默认值**（仅限 `FIGMA_API_BASE`）
+
+**安全提示**：
+- 将 `.env` 文件添加到 `.gitignore`，避免提交敏感信息
+- 使用最小必要权限的 Figma 访问令牌
+
 ## 可用功能
 
 ### 1. 获取文件信息
