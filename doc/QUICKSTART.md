@@ -55,16 +55,16 @@ multica skill import --url "https://skills.sh/yourusername/figma-design-skill/fi
 multica skill create \
   --name "Figma Design" \
   --description "从 Figma 文件获取设计元素、属性和截图" \
-  --content "$(cat SKILL.md)"
+  --content "$(cat skills/figma-design/SKILL.md)"
 
 # 2. 添加支持文件（使用输出的 Skill ID）
 multica skill files upsert <skill-id> \
-  --path "lib/figma-client.js" \
-  --content "$(cat lib/figma-client.js)"
+  --path "skills/figma-design/lib/figma-client.js" \
+  --content "$(cat skills/figma-design/lib/figma-client.js)"
 
 multica skill files upsert <skill-id> \
-  --path "examples/basic-usage.js" \
-  --content "$(cat examples/basic-usage.js)"
+  --path "skills/figma-design/examples/basic-usage.js" \
+  --content "$(cat skills/figma-design/examples/basic-usage.js)"
 ```
 
 ## 第三步：配置 Skill
@@ -113,9 +113,9 @@ parameters:
 ## 项目文件说明
 
 ### 核心文件
-- **SKILL.md** - Skill 主文件，包含 frontmatter 和详细说明
-- **lib/figma-client.js** - Figma API 客户端封装
-- **examples/basic-usage.js** - 使用示例
+- **skills/figma-design/SKILL.md** - Skill 主文件，包含 frontmatter 和详细说明
+- **skills/figma-design/lib/figma-client.js** - Figma API 客户端封装
+- **skills/figma-design/examples/basic-usage.js** - 使用示例
 
 ### 文档文件
 - **README.md** - 英文文档
@@ -132,14 +132,14 @@ parameters:
 
 ### 工具文件
 - **init-repo.sh** - GitHub 仓库初始化脚本
-- **test/figma-client.test.js** - 单元测试
+- **skills/figma-design/test/figma-client.test.js** - 单元测试
 
 ## 常见问题
 
 ### Q: 导入失败怎么办？
 A: 检查：
 1. GitHub 仓库是否为公开
-2. SKILL.md 文件是否在仓库根目录
+2. SKILL.md 文件是否在 skills/figma-design/ 目录
 3. GitHub API 速率限制
 
 ### Q: Skill 无法访问 Figma？
@@ -158,7 +158,7 @@ A:
 
 - **文档**: 查看 DEPLOYMENT.md 和 PROJECT-OVERVIEW.md
 - **测试**: 运行 `npm test` 执行单元测试
-- **示例**: 查看 examples/basic-usage.js
+- **示例**: 查看 skills/figma-design/examples/basic-usage.js
 - **问题**: 在 GitHub 仓库中创建 Issue
 
 ## 下一步

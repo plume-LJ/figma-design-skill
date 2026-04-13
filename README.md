@@ -24,14 +24,14 @@ multica skill import --url "https://github.com/yourusername/figma-design-skill"
 multica skill create \
   --name "Figma Design" \
   --description "Extract design elements and screenshots from Figma files" \
-  --content "$(cat SKILL.md)"
+  --content "$(cat skills/figma-design/SKILL.md)"
 ```
 
 2. Add supporting files:
 ```bash
 multica skill files upsert <skill-id> \
-  --path "lib/figma-client.js" \
-  --content "$(cat lib/figma-client.js)"
+  --path "skills/figma-design/lib/figma-client.js" \
+  --content "$(cat skills/figma-design/lib/figma-client.js)"
 ```
 
 ## Configuration
@@ -158,16 +158,21 @@ npm test
 ### Project Structure
 ```
 figma-design-skill/
-├── SKILL.md              # Main skill file
-├── lib/
-│   └── figma-client.js   # Figma API client
-├── examples/
-│   └── basic-usage.js    # Usage examples
-├── test/
-│   └── figma-client.test.js # Test files
+├── skills/
+│   └── figma-design/
+│       ├── SKILL.md              # Main skill file
+│       ├── lib/
+│       │   └── figma-client.js   # Figma API client
+│       ├── examples/
+│       │   └── basic-usage.js    # Usage examples
+│       ├── test/
+│       │   └── figma-client.test.js # Test files
+│       └── package.json          # Skill configuration
+├── bin/                    # Deployment and validation scripts
+├── doc/                   # Documentation files
 ├── README.md             # English documentation
 ├── README-zh.md          # Chinese documentation
-└── package.json          # Project configuration
+└── package.json          # Root project configuration
 ```
 
 ## Security Notes

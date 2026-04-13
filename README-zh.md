@@ -27,13 +27,21 @@
 
 ```
 figma-design-skill/
-├── SKILL.md              # Skill 主文件
-├── lib/
-│   └── figma-client.js   # Figma API 客户端
-├── examples/
-│   └── basic-usage.js    # 使用示例
-├── README-zh.md         # 中文说明 (本文件)
-└── package.json         # 项目配置
+├── skills/
+│   └── figma-design/
+│       ├── SKILL.md              # Skill 主文件
+│       ├── lib/
+│       │   └── figma-client.js   # Figma API 客户端
+│       ├── examples/
+│       │   └── basic-usage.js    # 使用示例
+│       ├── test/
+│       │   └── figma-client.test.js # 单元测试
+│       ├── README-zh.md         # 中文说明 (本文件)
+│       └── package.json         # 项目配置
+├── bin/                    # 部署和验证脚本
+├── doc/                   # 文档文件
+├── README.md             # 英文文档
+└── package.json          # 根项目配置
 ```
 
 ## 配置示例

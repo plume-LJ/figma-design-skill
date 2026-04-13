@@ -6,7 +6,7 @@ echo "=== Figma Design Skill 仓库初始化 ==="
 echo ""
 
 # 检查是否在正确的目录
-if [ ! -f "SKILL.md" ]; then
+if [ ! -f "skills/figma-design/SKILL.md" ]; then
     echo "错误: 请在 figma-design-skill 目录中运行此脚本"
     exit 1
 fi

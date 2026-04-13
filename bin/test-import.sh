@@ -23,8 +23,8 @@ echo "=== 技能结构验证 ==="
 echo ""
 
 # 运行结构检查
-if [ -f "check-structure.sh" ]; then
-    ./check-structure.sh
+if [ -f "bin/check-structure.sh" ]; then
+    ./bin/check-structure.sh
 else
     echo "❌ 错误: check-structure.sh 不存在"
     exit 1

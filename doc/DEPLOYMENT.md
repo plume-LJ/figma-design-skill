@@ -66,7 +66,7 @@ If import fails, create manually:
 multica skill create \
   --name "Figma Design" \
   --description "Extract design elements and screenshots from Figma files" \
-  --content "$(cat SKILL.md)" \
+  --content "$(cat skills/figma-design/SKILL.md)" \
   --config '{"FIGMA_ACCESS_TOKEN": "your_token"}'
 
 # Note the skill ID from the output
@@ -74,12 +74,12 @@ SKILL_ID="skill_xxxxx"
 
 # 2. Add supporting files
 multica skill files upsert $SKILL_ID \
-  --path "lib/figma-client.js" \
-  --content "$(cat lib/figma-client.js)"
+  --path "skills/figma-design/lib/figma-client.js" \
+  --content "$(cat skills/figma-design/lib/figma-client.js)"
 
 multica skill files upsert $SKILL_ID \
-  --path "examples/basic-usage.js" \
-  --content "$(cat examples/basic-usage.js)"
+  --path "skills/figma-design/examples/basic-usage.js" \
+  --content "$(cat skills/figma-design/examples/basic-usage.js)"
 ```
 
 ## Step 4: Test the Skill
@@ -104,7 +104,7 @@ git push
 
 # 3. Update in Multica (if using manual creation)
 multica skill update $SKILL_ID \
-  --content "$(cat SKILL.md)"
+  --content "$(cat skills/figma-design/SKILL.md)"
 
 # Or re-import if using URL import
 multica skill import --url "https://github.com/yourusername/figma-design-skill" --force
@@ -116,12 +116,20 @@ For optimal compatibility with Multica's import system:
 
 ```
 figma-design-skill/
-├── SKILL.md              # Required: Main skill file with frontmatter
-├── lib/                  # Optional: Supporting libraries
-├── examples/             # Optional: Usage examples
-├── test/                 # Optional: Test files
-├── README.md             # Optional: Documentation
-└── package.json          # Optional: Node.js configuration
+├── skills/
+│   └── figma-design/
+│       ├── SKILL.md              # Required: Main skill file with frontmatter
+│       ├── lib/                  # Optional: Supporting libraries
+│       ├── examples/             # Optional: Usage examples
+│       ├── test/                 # Optional: Test files
+│       ├── package.json          # Optional: Node.js configuration
+│       ├── .env.example          # Optional: Environment variables example
+│       └── LICENSE               # Optional: MIT license
+├── bin/                    # Scripts for deployment and validation
+├── doc/                   # Documentation files
+├── README.md             # Main documentation
+├── README-zh.md          # Chinese documentation
+└── package.json          # Root project configuration
 ```
 
 ## Import URL Formats
@@ -138,7 +146,7 @@ Multica supports several import URL formats:
 
 ### Import Fails
 - Ensure the repository is public
-- Check that SKILL.md exists in the root or specified path
+- Check that SKILL.md exists in the skills/figma-design/ directory or specified path
 - Verify GitHub API rate limits are not exceeded
 
 ### Skill Doesn't Work
@@ -153,7 +161,7 @@ Multica supports several import URL formats:
 
 ## Best Practices
 
-1. **Versioning**: Update the version in SKILL.md frontmatter for each release
+1. **Versioning**: Update the version in skills/figma-design/SKILL.md frontmatter for each release
 2. **Documentation**: Keep README files updated with new features
 3. **Testing**: Add tests for new functionality
 4. **Security**: Never commit actual tokens or sensitive data
@@ -163,7 +171,7 @@ Multica supports several import URL formats:
 
 Consider setting up GitHub Actions to:
 - Run tests automatically
-- Validate SKILL.md format
+- Validate skills/figma-design/SKILL.md format
 - Publish to skills.sh or ClawHub automatically
 
 Example workflow file: `.github/workflows/ci.yml`

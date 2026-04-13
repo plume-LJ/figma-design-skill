@@ -12,21 +12,24 @@
 ## 文件结构
 ```
 figma-design-skill/
-├── SKILL.md              # Skill 主文件 (包含 frontmatter)
-├── lib/
-│   └── figma-client.js   # Figma API 客户端封装
-├── examples/
-│   └── basic-usage.js    # 基本使用示例
-├── test/
-│   └── figma-client.test.js # 单元测试
+├── skills/
+│   └── figma-design/
+│       ├── SKILL.md              # Skill 主文件 (包含 frontmatter)
+│       ├── lib/figma-client.js   # Figma API 客户端封装
+│       ├── examples/basic-usage.js # 基本使用示例
+│       ├── test/figma-client.test.js # 单元测试
+│       ├── package.json          # Node.js 项目配置
+│       ├── .env.example          # 环境变量示例
+│       └── LICENSE              # MIT 许可证
+├── bin/                    # 部署和验证脚本
+├── doc/                   # 文档文件
+│   ├── DEPLOYMENT.md      # 部署指南
+│   ├── PROJECT-OVERVIEW.md # 项目概览 (本文件)
+│   └── QUICKSTART.md      # 快速开始指南
 ├── README.md             # 英文文档
 ├── README-zh.md          # 中文文档
-├── DEPLOYMENT.md         # 部署指南
-├── PROJECT-OVERVIEW.md   # 项目概览 (本文件)
-├── package.json          # Node.js 项目配置
-├── .env.example          # 环境变量示例
 ├── .gitignore           # Git 忽略文件
-└── LICENSE              # MIT 许可证
+└── package.json          # 根项目配置
 ```
 
 ## 技术要求
@@ -81,11 +84,11 @@ npm test
 ### 添加新功能
 1. 在 `lib/figma-client.js` 中添加新方法
 2. 在 `test/` 目录中添加测试
-3. 更新 `SKILL.md` 文档
+3. 更新 `skills/figma-design/SKILL.md` 文档
 4. 更新示例文件
 
 ### 发布流程
-1. 更新 `SKILL.md` 中的版本号
+1. 更新 `skills/figma-design/SKILL.md` 中的版本号
 2. 提交并推送到 GitHub
 3. 在 Multica 中更新或重新导入 Skill
 
@@ -104,7 +107,7 @@ npm test
 - **403 错误**: 检查访问令牌是否有效和有权限
 - **404 错误**: 确认文件 ID 和节点 ID 正确
 - **429 错误**: API 速率限制，等待后重试
-- **导入失败**: 确保仓库是公开的且 SKILL.md 在根目录
+- **导入失败**: 确保仓库是公开的且 SKILL.md 在 skills/figma-design/ 目录
 
 ## 贡献指南
 1. Fork 项目

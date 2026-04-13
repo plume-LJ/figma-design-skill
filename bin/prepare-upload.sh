@@ -9,8 +9,8 @@ echo "=== 准备上传到 skills.sh ==="
 echo ""
 
 # 运行结构检查
-if [ -f "check-structure.sh" ]; then
-    ./check-structure.sh
+if [ -f "bin/check-structure.sh" ]; then
+    ./bin/check-structure.sh
 else
     echo "⚠️  警告: check-structure.sh 不存在，跳过结构检查"
 fi
