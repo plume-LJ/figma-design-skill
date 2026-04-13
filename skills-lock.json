@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "Figma Design": {
+      "source": "plume-LJ/figma-design-skill",
+      "sourceType": "github",
+      "computedHash": "ed9f1a4123e510e1f0aea142d5d8183f4e320c469d09bc130b05a5819affdd2e"
+    }
+  }
+}
