@@ -1,5 +1,5 @@
 // FigmaClient 测试文件
-const FigmaClient = require('../lib/figma-client');
+const FigmaClient = require('../scripts/figma-client');
 const { expect } = require('chai');
 
 describe('FigmaClient', () => {

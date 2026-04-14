@@ -138,7 +138,7 @@ parameters:
 
 ```javascript
 // 导入 FigmaClient 类
-import FigmaClient from './lib/figma-client.js';
+import FigmaClient from './scripts/figma-client.js';
 
 // Skill 主函数
 export default async function (args, context) {

@@ -2,7 +2,7 @@
   "name": "figma-design-skill",
   "version": "1.0.0",
   "description": "Figma Design Skill for Multica - Extract design elements and screenshots from Figma files",
-  "main": "lib/figma-client.js",
+  "main": "scripts/figma-client.js",
   "scripts": {
     "test": "mocha test/*.test.js",
     "example": "node examples/basic-usage.js"

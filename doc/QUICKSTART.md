@@ -59,8 +59,8 @@ multica skill create \
 
 # 2. 添加支持文件（使用输出的 Skill ID）
 multica skill files upsert <skill-id> \
-  --path "skills/figma-design/lib/figma-client.js" \
-  --content "$(cat skills/figma-design/lib/figma-client.js)"
+  --path "skills/figma-design/scripts/figma-client.js" \
+  --content "$(cat skills/figma-design/scripts/figma-client.js)"
 
 multica skill files upsert <skill-id> \
   --path "skills/figma-design/examples/basic-usage.js" \
@@ -114,7 +114,7 @@ parameters:
 
 ### 核心文件
 - **skills/figma-design/SKILL.md** - Skill 主文件，包含 frontmatter 和详细说明
-- **skills/figma-design/lib/figma-client.js** - Figma API 客户端封装
+- **skills/figma-design/scripts/figma-client.js** - Figma API 客户端封装
 - **skills/figma-design/examples/basic-usage.js** - 使用示例
 
 ### 文档文件

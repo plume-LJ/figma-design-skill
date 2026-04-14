@@ -30,8 +30,8 @@ multica skill create \
 2. Add supporting files:
 ```bash
 multica skill files upsert <skill-id> \
-  --path "skills/figma-design/lib/figma-client.js" \
-  --content "$(cat skills/figma-design/lib/figma-client.js)"
+  --path "skills/figma-design/scripts/figma-client.js" \
+  --content "$(cat skills/figma-design/scripts/figma-client.js)"
 ```
 
 ## Configuration
@@ -60,7 +60,7 @@ Figma file URL format: `https://www.figma.com/file/{FILE_ID}/...`
 
 ### Basic Usage
 ```javascript
-const FigmaClient = require('./lib/figma-client');
+const FigmaClient = require('./scripts/figma-client');
 
 const config = {
   FIGMA_ACCESS_TOKEN: process.env.FIGMA_ACCESS_TOKEN,
@@ -161,7 +161,7 @@ figma-design-skill/
 ├── skills/
 │   └── figma-design/
 │       ├── SKILL.md              # Main skill file
-│       ├── lib/
+│       ├── scripts/
 │       │   └── figma-client.js   # Figma API client
 │       ├── examples/
 │       │   └── basic-usage.js    # Usage examples

@@ -15,7 +15,7 @@ figma-design-skill/
 ├── skills/
 │   └── figma-design/
 │       ├── SKILL.md              # Skill 主文件 (包含 frontmatter)
-│       ├── lib/figma-client.js   # Figma API 客户端封装
+│       ├── scripts/figma-client.js   # Figma API 客户端封装
 │       ├── examples/basic-usage.js # 基本使用示例
 │       ├── test/figma-client.test.js # 单元测试
 │       ├── package.json          # Node.js 项目配置
@@ -61,7 +61,7 @@ multica skill import --url "https://github.com/yourusername/figma-design-skill"
 
 ### 3. 使用示例
 ```javascript
-const FigmaClient = require('./lib/figma-client');
+const FigmaClient = require('./scripts/figma-client');
 const client = new FigmaClient(config);
 
 // 获取文件信息
@@ -82,7 +82,7 @@ npm test
 ```
 
 ### 添加新功能
-1. 在 `lib/figma-client.js` 中添加新方法
+1. 在 `scripts/figma-client.js` 中添加新方法
 2. 在 `test/` 目录中添加测试
 3. 更新 `skills/figma-design/SKILL.md` 文档
 4. 更新示例文件

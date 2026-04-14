@@ -30,7 +30,7 @@ figma-design-skill/
 ├── skills/
 │   └── figma-design/
 │       ├── SKILL.md              # Skill 主文件
-│       ├── lib/
+│       ├── scripts/
 │       │   └── figma-client.js   # Figma API 客户端
 │       ├── examples/
 │       │   └── basic-usage.js    # 使用示例

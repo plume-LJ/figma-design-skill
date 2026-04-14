@@ -1,5 +1,5 @@
 // 基本使用示例
-const FigmaClient = require('../lib/figma-client');
+const FigmaClient = require('../scripts/figma-client');
 
 const config = {
   FIGMA_ACCESS_TOKEN: process.env.FIGMA_ACCESS_TOKEN,

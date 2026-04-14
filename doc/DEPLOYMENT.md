@@ -74,8 +74,8 @@ SKILL_ID="skill_xxxxx"
 
 # 2. Add supporting files
 multica skill files upsert $SKILL_ID \
-  --path "skills/figma-design/lib/figma-client.js" \
-  --content "$(cat skills/figma-design/lib/figma-client.js)"
+  --path "skills/figma-design/scripts/figma-client.js" \
+  --content "$(cat skills/figma-design/scripts/figma-client.js)"
 
 multica skill files upsert $SKILL_ID \
   --path "skills/figma-design/examples/basic-usage.js" \
@@ -119,7 +119,7 @@ figma-design-skill/
 ├── skills/
 │   └── figma-design/
 │       ├── SKILL.md              # Required: Main skill file with frontmatter
-│       ├── lib/                  # Optional: Supporting libraries
+│       ├── scripts/                  # Optional: Supporting libraries
 │       ├── examples/             # Optional: Usage examples
 │       ├── test/                 # Optional: Test files
 │       ├── package.json          # Optional: Node.js configuration

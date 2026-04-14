@@ -20,7 +20,7 @@ echo "✓ 技能目录存在: $SKILL_DIR"
 # 检查必需文件
 required_files=(
     "SKILL.md"
-    "lib/figma-client.js"
+    "scripts/figma-client.js"
     "examples/basic-usage.js"
 )
 
